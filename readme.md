@@ -34,7 +34,7 @@ or for a Linux user:
 linux-user$ xdg-open target/site/jacoco/index.html
 ```
 
-For a deeper and automatic analysis there are some great server side tools. [SonarQube](https://www.sonarqube.org/) and [Codecov](https://codecov.io/) both run triggered by a build server (Jenkins, Travis etc). As a side note, SonarQube gives more than code coverage like _Code Smell_, _Vulnerabilities_, _Build Statistics_. There is also a [https://www.sonarlint.org/](very powerful and free plugin) that can be installed in your IDE and it will give you direct feedback. You don't need a Sonar server to run the plugin. Use it!  
+For a deeper and automatic analysis there are some great server side tools. [SonarQube](https://www.sonarqube.org/) and [Codecov](https://codecov.io/) both run triggered by a build server (Jenkins, Travis etc). As a side note, SonarQube gives more than code coverage like _Code Smell_, _Vulnerabilities_, _Build Statistics_. There is also a very powerful and free plugin called [SonarLint](https://www.sonarlint.org/) that can be installed in your IDE and it will give you direct feedback. You don't need a Sonar server to run the plugin. Use it!  
 
 Unfortunately a great tool died when Java 9 arrived. The [Maven Corbetura plugin](https://github.com/cobertura/cobertura/wiki) doesn't work any longer because of the missing tools jar that no longer exists. If you still are on Java 8, try it out. The plugin can be executed without changes to the POM file.
 
