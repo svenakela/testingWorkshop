@@ -9,9 +9,9 @@ Is this a complete testing bible? No! This is a workshop into _how_ to test your
 
 ## What To Do?
 
-There are a few sessions that you can go through, either all in a row or one at a time. Read the readme.md for each session to get the details. Every session has a specific task and each session has its own branch. To get the code and session practices, checkout the branch and start coding!
-
 Your task is to get to know testing tools and the goal is to get a high test coverage.
+
+There are a few sessions that you can go through, either all in a row or one at a time. Read the readme.md for each session to get the details. Every session has a specific task and each session has its own branch. To get the code and session practices, checkout the branch and start coding!
 
 ### So, how do we check the coverage?
 
