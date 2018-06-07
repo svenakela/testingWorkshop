@@ -36,9 +36,11 @@ linux-user$ xdg-open target/site/jacoco/index.html
 
 ## Sessions
 
+Here follows a brief explanation of the sessions in this workshop. 
+
 ### Create Tests On Existing Code
 
-How do we deal with code that already exists which is untested? Easy; write tests! First session and introduction to some test tools.
+How do we deal with code that already exists which is untested? Write tests! First session and introduction to some test tools.
 
 To continue with the [Test On Existing Code session](https://github.com/svenakela/testingWorkshop/tree/create-tests-on-existing-code), do a checkout on the branch and open this file again:
 
@@ -49,7 +51,7 @@ git checkout create-tests-on-existing-code
 
 ### When We Have To Deal With External Code
 
-Mock it, and mock some more.
+Mock it, and mock some more. When code relies on other methods, classes, requests we have the power to fake them away, even spy on them.
 
 To continue with the [Deal With External Code session](https://github.com/svenakela/testingWorkshop/tree/deal-with-external-code), do a checkout on the branch and open this file again:
 
@@ -98,3 +100,4 @@ For a deeper and automatic analysis there are some great server side tools. [Son
 Unfortunately a great tool died when Java 9 arrived. The [Maven Corbetura plugin](https://github.com/cobertura/cobertura/wiki) doesn't work any longer because of the missing tools jar that no longer exists. If you still are on Java 8, try it out. The plugin can be executed without changes to the POM file.
 
 This workshop is based on [Maven](https://maven.apache.org/) and also [Spring Boot](http://spring.io/projects/spring-boot) but there is no need to use the Spring Boot test support until later in the workshop. You can use standard libraries for testing until it's time to check in the Spring Boot test support.
+
