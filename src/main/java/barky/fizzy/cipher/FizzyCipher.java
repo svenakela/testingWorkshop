@@ -40,4 +40,8 @@ public class FizzyCipher {
         return retVal;
     }
 
+    public boolean isValid(final String cipher) {
+        return !cipher.isEmpty();
+    }
+
 }
