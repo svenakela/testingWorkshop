@@ -8,24 +8,22 @@ Get to know testing tools and aim for high test coverage!
 
 ### Scenario
 
-One morning at the coffee machine you are being told by your boss that the quiet dude Barky in the corner just left. You have to take over his project and dig into the code only to realize - there are no tests at all!
+So, you were told by your boss to manage the quiet dude Barky's old code. Now you realize it's a code smell el Grande...
 
-First off, without existing tests we actually don't know if code is doing what it is supposed to do. But code shouldn't be untested and by writing tests you ensure that the code still works as expected when you start refactoring. And when the time comes where code actually is guilty for doing wrong, you change your tests accordingly. So lets dig into the existing code and create tests!
+There is a Cipher generator for an external application that tries to get data from an external server. Of course, everything untested.
 
 ### Task
 
-Write tests for the existing code. You should reach at least 90 % test coverage.
-
-Is the code not-so-pretty (lets be honest, ugly)? Yes! When you finally have a high code coverage, rewrite code, make it easier to read, break out code blocks to new methods and refine the tests. Make it better!
+Write tests for the existing code. You should reach at least 90 % test coverage. Try to test as close to the external calls as possible.
 
 
 ### Things To Test
 
 - Do we actually get the correct result from the cipher method?
-- What about the time range?
-- Is the entire method touched by the tests?
+- Mock or Spy away the external client
+- Verify the number of times the client is invoked
+- Is the entire method touched by the tests (no branching)?
 - Do we get the expected value out?
-- If we run a range of numbers, how many times do we hit the `ModulusCipher` type? Count!
 
 
 ### Check Coverage
