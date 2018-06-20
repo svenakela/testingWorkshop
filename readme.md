@@ -77,6 +77,10 @@ Spring Boot (2) comes with a lot of testing tools. If you are going to code and 
 
 To continue with the [Spring Boot 2 session](https://github.com/svenakela/testingWorkshop/tree/spring-boot-2), do a checkout on the branch and open this file again:
 
+
+TODO: Move from another workshop into this. Out of scope right now.
+
+
 ```
 git pull
 git checkout spring-boot-2
