@@ -3,19 +3,11 @@ package barky.fizzy.cipher;
 import java.nio.charset.StandardCharsets;
 import java.time.Instant;
 
-import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.ChannelInitializer;
-import io.netty.channel.ChannelOption;
-import io.netty.channel.EventLoopGroup;
 import io.netty.channel.SimpleChannelInboundHandler;
-import io.netty.channel.nio.NioEventLoopGroup;
-import io.netty.channel.socket.SocketChannel;
-import io.netty.channel.socket.nio.NioSocketChannel;
-import io.netty.handler.codec.LineBasedFrameDecoder;
 import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 
@@ -24,40 +16,20 @@ public final class CallThatStupidServerCipher extends SimpleChannelInboundHandle
     private static final StringDecoder DECODER = new StringDecoder(StandardCharsets.UTF_8);
     private static final StringEncoder ENCODER = new StringEncoder(StandardCharsets.UTF_8);
 
-    private final String host;
-    private final int port;
-    private Channel channel;
+    private final String  host;
+    private final int     port;
+    private final ChannelInitiator channelInitiator;
+    private       Channel channel;
 
-    public CallThatStupidServerCipher(final String host, final int port) {
+    public CallThatStupidServerCipher(final String host, final int port, final ChannelInitiator channelInitiator) {
         this.host = host;
         this.port = port;
-        connect();
+        this.channelInitiator = channelInitiator;
+        this.channel = connect();
     }
 
-    private void connect() {
-        EventLoopGroup group = new NioEventLoopGroup();
-        try {
-            Bootstrap b = new Bootstrap();
-            b.group(group)
-                    .channel(NioSocketChannel.class)
-                    .option(ChannelOption.SO_KEEPALIVE, true)
-                    .handler(new ChannelInitializer<SocketChannel>() {
-                        @Override
-                        public void initChannel(final SocketChannel ch) throws Exception {
-                            ch.pipeline().addLast(ENCODER);
-                            ch.pipeline().addLast(new LineBasedFrameDecoder(Short.MAX_VALUE, true, true));
-                            ch.pipeline().addLast(DECODER);
-                            ch.pipeline().addLast(this);
-                        }
-                    });
-
-            channel = b.connect(host, port).sync().channel();
-
-        } catch (Exception e) {
-            connect();
-        } finally {
-            group.shutdownGracefully();
-        }
+    private Channel connect() {
+        return channelInitiator.connect(host, port, ENCODER, DECODER);
     }
 
     @Override
@@ -74,12 +46,10 @@ public final class CallThatStupidServerCipher extends SimpleChannelInboundHandle
         });
 
         return Instant.now().toString(); // Never the same return value twice. Don't trust it
-
     }
 
     @Override
     protected void channelRead0(final ChannelHandlerContext ctx, final String msg) throws Exception {
         System.err.println(msg);
     }
-
 }
