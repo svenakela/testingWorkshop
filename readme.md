@@ -8,22 +8,18 @@ Get to know testing tools and aim for high test coverage!
 
 ### Scenario
 
-So, you were told by your boss to manage the quiet dude Barky's old code. Now you realize it's a code smell el Grande...
-
-There is a Cipher generator for an external application that tries to get data from an external server. Of course, everything untested.
+We need to remake this thing! Time to do it as it should've been, right?
 
 ### Task
 
-Write tests for the existing code. You should reach at least 90 % test coverage. Try to test as close to the external calls as possible.
+Write tests FIRST, then the implementation!
+The requirements are the same as the branch [Deal With External Code session](https://github.com/svenakela/testingWorkshop/tree/deal-with-external-code), you 
+are supposed to re-implement the FizzBuzz Cipher but TDD style
 
 
 ### Things To Test
 
-- Do we actually get the correct result from the cipher method?
-- Mock or Spy away the external client
-- Verify the number of times the client is invoked
-- Is the entire method touched by the tests (no branching)?
-- Do we get the expected value out?
+It's up to you. Good luck!
 
 
 ### Check Coverage
