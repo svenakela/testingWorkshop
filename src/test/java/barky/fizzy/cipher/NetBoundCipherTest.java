@@ -1,19 +1,22 @@
 package barky.fizzy.cipher;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.util.Arrays;
 import java.util.Collections;
 
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.TestInstance.Lifecycle;
 import org.mockito.Mockito;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
+@TestInstance(Lifecycle.PER_CLASS) // Needed to get @BeforeAll to work, unless you like static fields
 class NetBoundCipherTest {
     Cipher         cipher;
     NetBoundCipher netBoundCipher;
 
-    @BeforeEach
+    @BeforeAll
     public void setUp() {
         cipher = Mockito.mock(Cipher.class);
         netBoundCipher = new NetBoundCipher(cipher);

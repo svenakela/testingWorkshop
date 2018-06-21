@@ -1,17 +1,19 @@
 package barky.fizzy.cipher;
 
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.ArgumentMatchers.anyString;
+
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.TestInstance.Lifecycle;
 import org.mockito.Mockito;
 
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
 
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyInt;
-import static org.mockito.ArgumentMatchers.anyString;
-
+@TestInstance(Lifecycle.PER_CLASS) // Needed to get @BeforeAll to work, unless you like static fields
 class CallThatStupidServerCipherTest {
     Channel          channel;
     ChannelFuture    channelFuture;
