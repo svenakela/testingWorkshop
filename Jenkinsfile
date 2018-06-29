@@ -1,12 +1,16 @@
 #!/usr/bin/env groovy
 
+node {
+    def scmVars = checkout scm
+}
+
 pipeline {
     agent any
 
     stages {
         stage('Build') {
             steps {
-                sh 'mvn compile'
+                sh './mvnw compile'
             }
         }
         stage('Test') {
