@@ -3,15 +3,33 @@
 [![forthebadge](https://forthebadge.com/images/badges/gluten-free.svg)](https://forthebadge.com)
 
 
-Welcome to the testing workshop, a practical guide into testing in the Java world!
+This is a working example how to write tests with Groovy and Spock!
 
-Is this a complete testing bible? No! This is a workshop into _how_ to test your (or someone else's) code with practical tips how to write code that is easier to test and what tools can be used to do it.
+To be able to run this branch locally, you need at least Java 10, Groovy 2.5 and Maven installed. 
+How to install Groovy can be found [here](http://groovy-lang.org/install.html#SDKMAN).
 
 ## What To Do?
 
-There are a few sessions that you can go through, either all in a row or one at a time. Read the readme.md for each session to get the details. Every session has a specific task and each session has its own branch. To get the code and session practices, checkout the branch and start coding!
+This is actually a walk through session with not so much coding, but you are more than welcome to checkout the branch and write tests yourself! The [Spock Documentation](http://spockframework.org/spock/docs/1.1/index.html) will be your friend.
 
-Your task is to get to know testing tools and the goal is to get a high test coverage.
+### Go Another Language - Meet Groovy!
+
+There are test tools and then there are test tools. This is _the_ test tool for a developer. Why? Well, check it out.
+
+By using Groovy and Spock we have a very clean way of writing tests, with little effort and just a few lines of code you can produce powerful test cases. They will behave as Junit tests, will be executed by Maven as usual and will be included in the test coverage reports.
+
+Groovy is accepting mixing of Java code and pure Groovy code. You can write Java syntax use Java classes within a Groovy class. You can even use semicolon if you'd like and it will still work.
+
+Groovy has a lot of powerful features built-in, such as string shifting, Json/Xml transformers (Check the [slurpers](http://groovy-lang.org/json.html)) and [closures](http://docs.groovy-lang.org/latest/html/documentation/#_closures). 
+
+Spock includes mocking mechanisms, checking features such as _did we get an Exception?_ (`throw()` or `notThrown`), timeout controls and much more. Already mentioned, but have a look at the [Spock Documentation](http://spockframework.org/spock/docs/1.1/index.html).
+
+To continue with the [Another Language session](https://github.com/svenakela/testingWorkshop/tree/another-language-groovy), do a checkout on the branch and dig into the test examples:
+
+```
+git pull
+git checkout another-language-groovy
+```
 
 ### So, how do we check the coverage?
 
@@ -32,67 +50,4 @@ or for a Linux user:
 
 ```
 linux-user$ xdg-open target/site/jacoco/index.html
-```
-
-For a deeper and automatic analysis there are some great server side tools. [SonarQube](https://www.sonarqube.org/) and [Codecov](https://codecov.io/) both run triggered by a build server (Jenkins, Travis etc). As a side note, SonarQube gives more than code coverage like _Code Smell_, _Vulnerabilities_, _Build Statistics_. There is also a very powerful and free plugin called [SonarLint](https://www.sonarlint.org/) that can be installed in your IDE and it will give you direct feedback. You don't need a Sonar server to run the plugin. Use it!  
-
-Unfortunately a great tool died when Java 9 arrived. The [Maven Corbetura plugin](https://github.com/cobertura/cobertura/wiki) doesn't work any longer because of the missing tools jar that no longer exists. If you still are on Java 8, try it out. The plugin can be executed without changes to the POM file.
-
-This workshop is based on [Maven](https://maven.apache.org/) and also [Spring Boot](http://spring.io/projects/spring-boot) but there is no need to use the Spring Boot test support until later in the workshop. You can use standard libraries for testing until it's time to check in the Spring Boot test support.
-
-## Sessions
-
-### Create Tests On Existing Code
-
-How do we deal with code that already exists which is untested? Easy; write tests! First session and introduction to some test tools.
-
-To continue with the [Test On Existing Code session](https://github.com/svenakela/testingWorkshop/tree/create-tests-on-existing-code), do a checkout on the branch and open this file again:
-
-```
-git pull
-git checkout create-tests-on-existing-code
-```
-
-### When We Have To Deal With External Code
-
-Mock it, and mock some more.
-
-To continue with the [Deal With External Code session](https://github.com/svenakela/testingWorkshop/tree/deal-with-external-code), do a checkout on the branch and open this file again:
-
-```
-git pull
-git checkout deal-with-external-code
-```
-
-### Test Driven Development
-
-Dream Scenario, you have the power to be the first developer and your spec is clear as whisky. Hello TDD!
-
-To continue with the [Test Driven Development session](https://github.com/svenakela/testingWorkshop/tree/test-driven-development), do a checkout on the branch and open this file again:
-
-```
-git pull
-git checkout test-driven-development
-```
-
-### Write Tests In Spring Boot
-
-Spring Boot (2) comes with a lot of testing tools. If you are going to code and test in Spring Boot, check this chapter.
-
-To continue with the [Spring Boot 2 session](https://github.com/svenakela/testingWorkshop/tree/spring-boot-2), do a checkout on the branch and open this file again:
-
-```
-git pull
-git checkout spring-boot-2
-```
-
-### Go Another Language - Meet Groovy!
-
-There are test tools and then there are test tools. This is _the_ test tool for a developer. Why? Well, check it out.
-
-To continue with the [Another Language session](https://github.com/svenakela/testingWorkshop/tree/another-language-groovy), do a checkout on the branch and open this file again:
-
-```
-git pull
-git checkout another-language-groovy
 ```
