@@ -18,7 +18,7 @@ There are test tools and then there are test tools. This is _the_ test tool for 
 
 By using Groovy and Spock we have a very clean way of writing tests, with little effort and just a few lines of code you can produce powerful test cases. They will behave as Junit tests, will be executed by Maven as usual and will be included in the test coverage reports.
 
-Groovy is accepting mixing of Java code and pure Groovy code. You can write Java syntax use Java classes within a Groovy class. You can even use semicolon if you'd like and it will still work.
+Groovy is accepting mixing of Java code and pure Groovy code. You can write Java syntax and use Java classes within a Groovy class. You can even use semicolon if you'd like and it will still work.
 
 Groovy has a lot of powerful features built-in, such as string shifting, Json/Xml transformers (Check the [slurpers](http://groovy-lang.org/json.html)) and [closures](http://docs.groovy-lang.org/latest/html/documentation/#_closures). 
 
