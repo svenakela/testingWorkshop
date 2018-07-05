@@ -5,7 +5,7 @@ import static org.junit.Assert.*
 import org.junit.Assert
 import org.junit.Test
 
-class GroovyTestingTest {
+class JunitInGroovyTest {
 
     @Test
     void checkTheString() {
