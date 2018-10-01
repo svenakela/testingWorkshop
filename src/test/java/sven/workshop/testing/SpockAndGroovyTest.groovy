@@ -11,7 +11,7 @@ class SpockAndGroovyTest extends Specification {
     def 'Verify the String in AnotherLanguage'() {
 
         when:
-            def value = new AnotherLanguage().languge
+            def value = new AnotherLanguage().language
         then:
             value.contains('Groovy')
     }

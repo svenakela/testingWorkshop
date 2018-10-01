@@ -87,7 +87,6 @@
           </execution>
         </executions>
         <configuration>
-          <targetBytecode>1.8</targetBytecode>
           <sources>
             <source>
               <directory>${project.basedir}/src/main/java</directory>
